@@ -1,0 +1,55 @@
+{
+  "project_info": {
+    "project_number": "756550568139",
+    "firebase_url": "https://emotionlog.firebaseio.com",
+    "project_id": "emotionlog",
+    "storage_bucket": "emotionlog.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:756550568139:android:f7b57201e2b6c143",
+        "android_client_info": {
+          "package_name": "bg.android.isma.emotionlog"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "756550568139-7ihtbu8ajf81cdkl83ofdem29mdpbv5n.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "bg.android.isma.emotionlog",
+            "certificate_hash": "f9ee3f25d95d7608e2a3a29f743195657626eb6b"
+          }
+        },
+        {
+          "client_id": "756550568139-8g242rrbali62dqpgoqlradmt2v4fbkp.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyB2HhClUm8b3pnsK6wU__negdnueGjehAw"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "756550568139-8g242rrbali62dqpgoqlradmt2v4fbkp.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

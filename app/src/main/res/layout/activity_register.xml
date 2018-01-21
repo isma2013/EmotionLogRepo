@@ -1,0 +1,202 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:gravity="center"
+    android:orientation="vertical"
+    android:background="#d9d9d9"
+    android:padding="@dimen/layout_padding"
+    android:weightSum="100"
+    tools:context="bg.android.isma.emotionlog.RegisterActivity">
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="25"
+        android:background="#00ff00"
+        android:gravity="center"
+        android:text="@string/sign_up"
+        android:textSize="30sp"
+        android:textStyle="bold" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="25"
+        android:orientation="vertical">
+
+        <EditText
+            android:id="@+id/etLastname"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:drawableLeft="@drawable/name"
+            android:drawableStart="@drawable/name"
+            android:ems="10"
+            android:hint="@string/last_name"
+            android:inputType="textPersonName" />
+
+        <EditText
+            android:id="@+id/etFirstname"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:drawableLeft="@drawable/name"
+            android:drawableStart="@drawable/name"
+            android:ems="10"
+            android:hint="@string/first_name"
+            android:inputType="textPersonName" />
+
+        <EditText
+            android:id="@+id/etBirthdate"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:drawableLeft="@drawable/birthdate"
+            android:drawableStart="@drawable/birthdate"
+            android:ems="10"
+            android:hint="@string/birth_date"
+            android:inputType="date" />
+
+        <EditText
+            android:id="@+id/etGender"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:drawableLeft="@drawable/gender"
+            android:drawableStart="@drawable/gender"
+            android:ems="10"
+            android:hint="@string/gender"
+            android:inputType="textPersonName" />
+
+        <AutoCompleteTextView
+            android:id="@+id/acTvCountry"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:drawableLeft="@drawable/country_icon"
+            android:drawableStart="@drawable/country_icon"
+            android:ems="10"
+            android:hint="@string/select_a_country"
+            android:inputType="textAutoComplete" />
+        <EditText
+            android:id="@+id/et_email"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:drawableLeft="@drawable/email"
+            android:drawableStart="@drawable/email"
+            android:ems="10"
+            android:hint="@string/email"
+            android:inputType="textEmailAddress"/>
+
+        fg<EditText
+            android:id="@+id/etUsername"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:drawableLeft="@drawable/username"
+            android:drawableStart="@drawable/username"
+            android:ems="10"
+            android:hint="@string/username"
+            android:inputType="textPersonName" />
+
+        <EditText
+            android:id="@+id/etPassword"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:drawableLeft="@drawable/password"
+            android:drawableStart="@drawable/password"
+            android:ems="10"
+            android:hint="@string/password"
+            android:inputType="textPassword" />
+
+        <EditText
+            android:id="@+id/etCheckPassword"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:drawableLeft="@drawable/cpassword"
+            android:drawableStart="@drawable/cpassword"
+            android:ems="10"
+            android:hint="@string/ConfirmPassword"
+            android:inputType="textPassword" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="25"
+        android:gravity="center"
+        android:orientation="horizontal">
+
+        <CheckBox
+            android:id="@+id/cbTermsofUse"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:duplicateParentState="true"
+            android:gravity="center"
+            android:text="@string/terms_ofUse"
+            android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+            android:textSize="16sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/tv_TermsOfUse"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="end"
+            android:paddingEnd="5dp"
+            android:paddingStart="5dp"
+            android:text="@string/terms_of_use"
+            android:textAppearance="@android:style/TextAppearance.Holo"
+            android:textColor="#00ff00"
+            android:textSize="16sp"
+            android:textStyle="bold" />
+
+    </LinearLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="70dp"
+        android:layout_weight="25"
+        android:gravity="center"
+        android:orientation="horizontal">
+
+
+        <TextView
+            android:id="@+id/tvAlreadyMember"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="@string/a_member"
+            android:textColor="#00ff00"
+
+            />
+
+        <Button
+            android:id="@+id/BSignup"
+            style="@android:style/Widget.Button.Inset"
+            android:layout_width="175dp"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:backgroundTint="#00ff00"
+            android:onClick="register_user"
+            android:text="@string/register"
+            android:textStyle="bold"
+            tools:ignore="NestedWeights"
+            tools:targetApi="lollipop" />
+
+        <Button
+            android:id="@+id/BCancel"
+            style="@android:style/Widget.Button.Inset"
+            android:layout_width="175dp"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentRight="true"
+            android:backgroundTint="#ff0000"
+            android:text="@string/cancel"
+            android:textStyle="bold"
+            tools:targetApi="lollipop" />
+    </RelativeLayout>
+
+
+</LinearLayout>
