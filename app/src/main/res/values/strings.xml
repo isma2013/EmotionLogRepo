@@ -21,14 +21,14 @@
     <string name="login">SIGN IN</string>
     <string name="member">Not yet a member?</string>
     <string name="sign_up_here">Sign Up Here !</string>
-    <string name="a_member">Already a memeber? Sign in Here!</string>
+    <string name="a_member">Already a member? Sign in Here!</string>
     <string name="emoji">emoji Description</string>
     <string name="e_mail">e-mail address</string>
     <string name="pass_word">password</string>
     <string name="authentication">Log in</string>
 
-    <item name="visible" type="id"/>
-    <item name="masked" type="id"/>
+    <item name="visible" type="id" />
+    <item name="masked" type="id" />
 
     <string-array name="EmotionsTitles">
         <item> HAPPINESS </item>
