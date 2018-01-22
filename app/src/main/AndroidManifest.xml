@@ -59,7 +59,14 @@
                 <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>
         </activity>
-        <activity android:name=".ExpressYourEmotions"></activity>
+        <activity android:name=".ExpressYourEmotions">
+            android:screenOrientation="locked">
+            <intent-filter>
+                <action android:name="android.intent.action.EXPRESSYOUREMOTIONS" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
     </application>
 
 </manifest>
