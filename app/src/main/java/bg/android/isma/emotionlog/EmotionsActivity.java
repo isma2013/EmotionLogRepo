@@ -2,6 +2,7 @@ package bg.android.isma.emotionlog;
 
 import android.app.Activity;
 import android.content.Context;
+import android.content.Intent;
 import android.content.res.Resources;
 import android.os.Bundle;
 import android.view.LayoutInflater;
@@ -34,9 +35,11 @@ public class EmotionsActivity extends Activity  {
         listEmotions.setOnItemClickListener(new AdapterView.OnItemClickListener() {/*When an item in the listview is clicked, the function onItemClick will perform the specified action.*/
            @Override
            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-               String Slecteditem= emotions[+position];
+               String Selecteditem= emotions[+position];
                Toast.makeText(getApplicationContext(),"You have selected "
-                       + Slecteditem, Toast.LENGTH_SHORT).show();
+                       + Selecteditem, Toast.LENGTH_SHORT).show();
+               finish();
+               startActivity(new Intent(EmotionsActivity.this, RegisterActivity.class));
            }
        });
     }

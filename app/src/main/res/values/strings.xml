@@ -4,28 +4,32 @@
     <string name="last_name">Enter Last Name</string>
     <string name="birth_date">Birth Date (dd/mm/yyyy)</string>
     <string name="gender">Enter Gender</string>
-    <string name="username">Enter username </string>
-    <string name="email">Enter e-mail address</string>
-    <string name="password">Enter password</string>
+    <string name="email">Enter your email </string>
+    <string name="key_password">Enter your password</string>
     <string name="ConfirmPassword">Confirm Password</string>
-    <string name="register">SIGN UP</string>
-    <string name="cancel">CANCEL</string>
+    <string name="username"> Enter username </string>
+    <string name="save">Save and Continue</string>
+    <string name="cancel_login">Cancel/Log Out</string>
     <string name="terms_ofUse">I agree to the </string>
     <string name="select_a_country">Enter your Country name</string>
     <string name="select_country">Enter your Country name</string>
     <string name="terms_of_use"> Terms and Conditions of Use</string>
-    <string name="sign_up">SIGN UP FOR FREE</string>
+    <string name="emotion"> Describe How You Feel</string>
     <string name="emolog">logo</string>
-    <string name="f_details">Forgot your details?</string>
+    <string name="f_details">Forgot password ?</string>
     <string name="remember">Remember me</string>
-    <string name="login">SIGN IN</string>
+    <string name="login">Sign In</string>
     <string name="member">Not yet a member?</string>
     <string name="sign_up_here">Sign Up Here !</string>
     <string name="a_member">Already a member? Sign in Here!</string>
     <string name="emoji">emoji Description</string>
     <string name="e_mail">e-mail address</string>
-    <string name="pass_word">password</string>
+    <string name="pass_word"> Enter your password</string>
     <string name="authentication">Log in</string>
+    <string name="signup"> Sign Up </string>
+    <string name="already_member"> Already a member ?</string>
+    <string name="sign_in_here"> Sign In Here !</string>
+    <string name="message"> Sign Up with e-mail and password</string>
 
     <item name="visible" type="id" />
     <item name="masked" type="id" />

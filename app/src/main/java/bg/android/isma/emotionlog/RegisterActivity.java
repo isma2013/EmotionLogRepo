@@ -13,30 +13,25 @@ import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
-
 
 public class RegisterActivity extends AppCompatActivity implements View.OnClickListener {
     EditText last_name;
     EditText first_name;
     EditText birth_date;
     EditText gender;
+    EditText emotion_description;
     AutoCompleteTextView country_name;
-    EditText email_address;
-    EditText username;
-    EditText password;
-    EditText retype_password;
-    Button sign_Up;
-    TextView termsOfUseLink;
-    CheckBox agreeToTerms;
-    Button cancel;
-    TextView alreadyMember;
+    Button save_continue;
+    Button cancel_logout;
     AutoCompleteTextView autocomplete;
     ArrayAdapter<String> adapter;
 
     DatabaseReference databaseReference;
-
+    private FirebaseAuth auth;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -50,15 +45,9 @@ public class RegisterActivity extends AppCompatActivity implements View.OnClickL
         birth_date = (EditText) findViewById(R.id.etBirthdate);
         gender = (EditText) findViewById(R.id.etGender);
         country_name = (AutoCompleteTextView) findViewById(R.id.acTvCountry);
-        email_address = (EditText) findViewById(R.id.et_email);
-        username = (EditText) findViewById(R.id.etUsername);
-        password = (EditText) findViewById(R.id.etPassword);
-        retype_password = (EditText) findViewById(R.id.etCheckPassword);
-        sign_Up = (Button) findViewById(R.id.BSignup);
-        cancel = (Button) findViewById(R.id.BCancel);
-        termsOfUseLink = (TextView) findViewById(R.id.tv_TermsOfUse);
-        alreadyMember = (TextView) findViewById(R.id.tvAlreadyMember);
-        agreeToTerms = (CheckBox) findViewById(R.id.cbTermsofUse);
+        emotion_description = (EditText) findViewById(R.id.et_describe_emotion);
+        save_continue = (Button) findViewById(R.id.BSignup);
+        cancel_logout = (Button) findViewById(R.id.BCancel);
 
 
         String[] countries = getResources().getStringArray(R.array.countries_array);
@@ -67,46 +56,28 @@ public class RegisterActivity extends AppCompatActivity implements View.OnClickL
         autocomplete.setAdapter(adapter);
         autocomplete.setThreshold(1);
 
-        sign_Up.setOnClickListener(this);
+        auth = FirebaseAuth.getInstance();
+        if (auth.getCurrentUser() == null) {
+            finish();
+            startActivity(new Intent(this, LoginActivity.class));
+        }
+        FirebaseUser user = auth.getCurrentUser();
+        Toast.makeText(this, "Welcome " + user.getEmail(), Toast.LENGTH_LONG).show();
 
-        cancel.setOnClickListener(this);
-
-        termsOfUseLink.setOnClickListener(this);
-
-        alreadyMember.setOnClickListener(this);
-
-        agreeToTerms.setOnClickListener(this);
-
+        save_continue.setOnClickListener(this);
+        cancel_logout.setOnClickListener(this);
     }
 
     @Override
     public void onClick(View v) {
-        if (v == sign_Up) {
-            if (!agreeToTerms.isChecked()) {
-                Toast.makeText(this, "You must agree to the terms and conditions of use.",
-                        Toast.LENGTH_LONG).show();
-            } else {
-                saveUser();
-            }
-
+        if (v == save_continue) {
+            saveUser();
         }
         // Cancel registration and redirect to the Login activity
-        if (v == cancel) {
-            Intent CancelItent = new Intent(RegisterActivity.this, LoginActivity.class);
-            CancelItent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
-            startActivity(CancelItent);
-        }
-        // Open the TermsOfUse activity when the Terms and Conditions text_view is clicked
-
-        if (v == termsOfUseLink) {
-            Intent termsOfUseIntent = new Intent(RegisterActivity.this, TermsOfUse.class);
-            RegisterActivity.this.startActivity(termsOfUseIntent);
-        }
-        // Redirect to the Login activity when alreadyMember text_view is clicked
-        if (v == alreadyMember) {
-            Intent LoginIntent = new Intent(RegisterActivity.this, LoginActivity.class);
-            LoginIntent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
-            startActivity(LoginIntent);
+        if (v == cancel_logout) {
+            auth.signOut();
+            finish();
+            startActivity(new Intent(RegisterActivity.this, LoginActivity.class));
         }
     }
 
@@ -117,24 +88,17 @@ public class RegisterActivity extends AppCompatActivity implements View.OnClickL
         String BirthDate = birth_date.getText().toString().trim();
         String Gender = gender.getText().toString().trim();
         String CountryName = country_name.getText().toString().trim();
-        String EmailAddress = email_address.getText().toString().trim();
-        String UserName = username.getText().toString().trim();
-        String Password = password.getText().toString().trim();
-        String RetypePassword = retype_password.getText().toString().trim();
-
+        String EmotionDescription = emotion_description.getText().toString().trim();
 
         if (!TextUtils.isEmpty(LastName) && !TextUtils.isEmpty(LastName)
                 && !TextUtils.isEmpty(FirstName)
                 && !TextUtils.isEmpty(BirthDate) && !TextUtils.isEmpty(Gender)
-                && !TextUtils.isEmpty(Gender)
-                && !TextUtils.isEmpty(CountryName) && !TextUtils.isEmpty(EmailAddress)
-                && !TextUtils.isEmpty(UserName)
-                && !TextUtils.isEmpty(Password) && !TextUtils.isEmpty(RetypePassword)) {
+                && !TextUtils.isEmpty(Gender) && !TextUtils.isEmpty(CountryName)
+                && !TextUtils.isEmpty(EmotionDescription)) {
 
             String id = databaseReference.push().getKey();
 
-            User user = new User(id, LastName, FirstName, BirthDate, Gender, CountryName,
-                    EmailAddress, UserName, Password, RetypePassword);
+            User user = new User(id, LastName, FirstName, BirthDate, Gender, CountryName, EmotionDescription);
 
             databaseReference.child(id).setValue(user);
             Toast.makeText(this, "User registered successfully", Toast.LENGTH_LONG).show();

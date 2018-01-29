@@ -10,18 +10,11 @@ public class User {
     public String UserBirthDate;
     public String UserGender;
     public String UserCountryName;
-    public String UserEmailAddress;
-    public String UserName;
-    public String UserPassword;
-    public String UserRetypePassword;
+    public String EmotionDescription;
 
-    public User() {
-
-    }
 
     public User(String userId, String userLastName, String userFirstName, String userBirthDate,
-                String userGender, String userCountryName, String userEmailAddress,
-                String userName, String userPassword, String userRetypePassword) {
+                String userGender, String userCountryName, String emotionDescription) {
 
 
         this.UserLastName = userLastName;
@@ -29,10 +22,7 @@ public class User {
         this.UserBirthDate = userBirthDate;
         this.UserGender = userGender;
         this.UserCountryName = userCountryName;
-        this.UserEmailAddress = userEmailAddress;
-        this.UserName = userName;
-        this.UserPassword = userPassword;
-        this.UserRetypePassword = userRetypePassword;
+        this.EmotionDescription = emotionDescription;
     }
-    
+
 }

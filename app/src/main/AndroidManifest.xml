@@ -59,10 +59,19 @@
                 <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>
         </activity>
-        <activity android:name=".ExpressYourEmotions">
+        <activity
+            android:name=".SignUpActivity"
             android:screenOrientation="locked">
             <intent-filter>
-                <action android:name="android.intent.action.EXPRESSYOUREMOTIONS" />
+                <action android:name="android.intent.action.SIGNUPACTIVITY" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+        <activity android:name=".ForgotPassword">
+            android:screenOrientation="locked">
+            <intent-filter>
+                <action android:name="android.intent.action.FORGOTPASSWORD" />
 
                 <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>
